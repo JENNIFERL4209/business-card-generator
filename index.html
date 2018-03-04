@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Business Card Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <style type="text/css">
+        .card {
+            width: 500px;
+            height: 300px;
+        }
+
+        .name {
+            font-family: 'Times New Roman', cursive;
+            text-align: right;
+            position: relative;
+            top: 100px;
+        }
+
+        .phone {
+            font-family: 'Times New Roman', cursive;
+            text-align: right;
+            position: relative;
+            top: 110px;
+        }
+
+        .email {
+            font-family: 'Times New Roman', cursive;
+            text-align: right;
+            position: relative;
+            top: 95px;
+        }
+
+        .job {
+            font-family: 'Times New Roman', cursive;
+            text-align: right;
+            position: relative;
+            top: 10px;
+        }
+
+        .company {
+            font-family: 'Abril Fatface', cursive;
+            text-align: center;
+            position: relative;
+            bottom: 150px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                // get inputs from the user
+                var name = $('#name').val();
+                var phone = $('#phone').val();
+                var email = $('#email').val();
+                var job = $('#job').val();
+                var company = $('#company').val();
+                var color = $('#color').val();
+                $('.name').html(name).css('color', 'black');
+                $('.phone').html(phone).css('color', 'black');
+                $('.email').html(email).css('color', 'black');
+                $('.company').html(company).css('color', 'black');
+                $('.job').html(job).css('color', 'black');
+                $('.card').css('background-color', color);
+            });
+        });
+    </script>
+</head>
+<body>
+    Name: <input id="name"><br> Phone: <input id="phone"><br> Em@il: <input id="email"><br> Company: <input id="company"><br> Job Title: <input id="job"><br> Color of your Business Card: <input id="color"><br>
+    <button>Generate Your Business Card</button>
+    <div class="card">
+        <h2 class="name"></h2>
+        <p class="phone"></p>
+        <p class="email"></p>
+        <h2 class="job"></h2>
+        <h1 class="company"></h1>
+        <div class="color"></div>
+    </div>
+</body>
+</html>
